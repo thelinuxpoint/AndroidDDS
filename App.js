@@ -7,9 +7,9 @@
  */
 
 import React from 'react';
-
-import type {Node} from 'react';
-
+import { Dimensions } from 'react-native';
+// import type {Node} from 'react';
+// import { Router, Scene } from 'react-native-router-flux'
 import {
     SafeAreaView,
     ScrollView,
@@ -29,47 +29,23 @@ import {
     ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import StartG14 from './components/StartG14.js';
 
 
-const App: () => Node = () => {
+let width = Dimensions.get('window').width; 
+let height = Dimensions.get('window').height; 
+
+const App =  () => {
     
     return (
-        <View style={{
-                flex:1,
-                backgroundColor:"#161923",
-                alignItems: "center",
-            }}>
-            <Text style={styles.titleText0}>G14</Text>
-            <Text style={styles.titleText1}>welcome to the advanced</Text>
-
-            <View style={{
-                position:"absolute",
-                bottom: 100
-
-            }}>
-                <Button title="Get Started"></Button>
-            </View>
-        </View>
+        <>
+            <StartG14/>
+        </>
     );
-    
+
 };
 
-const styles = StyleSheet.create({
-  baseText: {
-    fontFamily: "Cochin"
-  },
-  titleText0: {
-    fontSize: 50,
-    padding:100,
-    color:"white",
-    fontWeight: "bold"
-  },
-  titleText1: {
-    fontSize: 20,
-    padding:100,
-    color:"white",
-  }
-});
-
-
 export default App;
+
+
+
